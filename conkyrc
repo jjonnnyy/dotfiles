@@ -1,0 +1,69 @@
+alignment top_right
+gap_x 150
+gap_y 0
+background yes 
+
+border_width 1
+border_inner_margin 13
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+
+minimum_size 300 1160 
+
+use_xft yes
+xftfont Droid Sans:size=10
+
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+
+#window
+own_window yes
+own_window_class Conky
+own_window_type desktop
+own_window_argb_visual yes
+own_window_argb_value 175
+
+stippled_borders 0
+update_interval 1.0
+uppercase no
+show_graph_scale no
+show_graph_range no
+double_buffer yes
+
+
+TEXT
+${voffset 100}
+${hr 2}
+${font Droid Sans:bold:size=32}${time %H:%M:%S}$font
+${font Droid Sans:bold:size=18}${time %a %e %B %G}$font
+
+${font Droid Sans:bold:size=11}Status$font ${hr 2}
+${color grey}Kernel:$color $kernel           ${color grey}Uptime:$color $uptime
+${color grey}Charge:$color ${battery_percent BAT1}% ${goto 115}${battery_bar BAT1}
+${color grey}Time Remaining:$color ${battery_time BAT1}
+#${color grey}Dropbox Status:$color ${execi 10 dropbox status}
+
+${font Droid Sans:bold:size=11}Usage$font ${hr 2}
+${color grey}CPU Usage:$color $cpu% ${goto 115}${cpubar 5}
+${color grey}RAM Usage:$color $memperc% ${goto 115}${membar 5}
+${if_up wlan0}
+${font Droid Sans:bold:size=11}Wireless Network$font ${hr 2}
+${color grey}SSID:$color ${wireless_essid wlan0}
+${color grey}Signal:$color ${wireless_link_qual_perc wlan0}% ${goto 115}${wireless_link_bar 4 wlan0}
+${color grey}Bitrate:$color ${wireless_bitrate wlan0}
+${color grey}Down:$color ${downspeed wlan0} ${color grey} - Up:$color ${upspeed wlan0}
+${color grey}IP:$color ${addr wlan0}
+${endif}${if_existing /proc/net/route eth0}
+${font Droid Sans:bold:size=11}Wired Network$font ${hr 2}
+${color grey}IP:$color ${addr eth0}
+${color grey}Down:$color ${downspeed eth0} ${color grey} - Up:$color ${upspeed eth0}
+${endif}${hr 2}
