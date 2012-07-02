@@ -11,6 +11,9 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.NoBorders
+import XMonad.Util.SpawnOnce
 import Data.Monoid
 import System.Exit
 
@@ -46,7 +49,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5"]
+myWorkspaces    = ["1","2","3","4","5"] ++ map show [6..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -213,7 +216,8 @@ myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , resource  =? "kdesktop"       --> doIgnore
+    , isFullscreen                  --> doFullFloat ]
 
 ------------------------------------------------------------------------
 -- Event handling
@@ -224,7 +228,7 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = mempty <+> fullscreenEventHook
+myEventHook = fullscreenEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -242,7 +246,8 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = spawnOnce "nitrogen --restore" <+>
+                spawnOnce "./.batteryscript.sh"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
