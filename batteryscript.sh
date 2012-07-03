@@ -10,22 +10,20 @@ do
 
 if [ "$pluggedin" != "Discharging" ]; then
 		# Check first if charging
+        echo "" > .chargenow
 		sleep 5m
 	elif [ "$percent" -lt "15" ]; then
 		# If below 15% hibernate
-		notify-send -u critical "HIBERNATING DUE TO LOW BATTERY"
+        echo "<fc=#FF0000>HIBERNATING DUE TO LOW BATTERY</fc>" > .chargenow
 		sudo pm-hibernate
 		sleep 3m
 	elif [ "$percent" -lt "25" ]; then
 		# If below 25% alert user
-		notify-send -u critical "LOW BATTERY PLUG IN NOW"
-		sleep 2m	
-	elif [ "$percent" -lt "60" ]; then
-		# If below 50% check more regularly
-		notify-send -u low "Battery at $percent%"
-		sleep 8m	
+		echo "<fc=#FF0000>LOW BATTERY CHARGE NOW</fc>" > .chargenow 
+        sleep 2m	
 	else
 		# Else above 50% wait awhile
-		sleep 16m
+		echo "" > .chargenow
+        sleep 15m
 	fi
 done
