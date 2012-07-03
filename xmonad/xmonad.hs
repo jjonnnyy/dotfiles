@@ -261,7 +261,7 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = spawnOnce "nitrogen --restore" <+>
+myStartupHook = spawn "feh --bg-fill Dropbox/Wallpapers/Jellybean/xpIUv.jpg" <+>
                 spawnOnce "./.batteryscript.sh" <+>
                 spawnOnce "dropboxd"
 
