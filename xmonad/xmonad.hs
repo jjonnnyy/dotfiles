@@ -127,6 +127,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Lock screen
     , ((modm .|. shiftMask, xK_l     ), spawn "slimlock")
 
+    -- Mute Volume
+    , ((0, 0x1008ff12                ), spawn "amixer sset Master toggle")
+
+    -- Raise Volume
+    , ((0, 0x1008ff13                ), spawn "amixer sset Master 5%+")
+
+    -- Lower Volume
+    , ((0, 0x1008ff11                ), spawn "amixer sset Master 5%-")
+
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
@@ -247,7 +256,8 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = spawnOnce "nitrogen --restore" <+>
-                spawnOnce "./.batteryscript.sh"
+                spawnOnce "./.batteryscript.sh" <+>
+                spawnOnce "dropboxd"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
