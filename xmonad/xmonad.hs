@@ -124,6 +124,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
+    -- Set monitors
+    , ((modm              , xK_d     ), spawn "arandr")
+
     -- Lock screen
     , ((modm .|. shiftMask, xK_l     ), spawn "slimlock")
 
