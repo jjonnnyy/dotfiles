@@ -80,7 +80,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
-    , ((modm,               xK_n     ), refresh)
+    --, ((modm,               xK_n     ), refresh)
 
     -- Move focus to the next window
     , ((modm,               xK_Tab   ), windows W.focusDown)
@@ -124,6 +124,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
+    -- Open Wicd-client
+    , ((modm              , xK_n     ), spawn "wicd-client --no-tray") 
+    
     -- Set monitors
     , ((modm              , xK_d     ), spawn "arandr")
 
