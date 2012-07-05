@@ -1,0 +1,13 @@
+XTerm*background: black
+XTerm*foreground: white
+XTerm*pointerColor: white
+
+XTerm*mainMenu*backgroundPixmap: gradient:vertical?dimension=400&start=gray10&end=gray40
+XTerm*mainMenu*foreground: white
+XTerm*vtMenu*backgroundPixmap: gradient:vertical?dimension=550&start=gray10&end=gray40
+XTerm*vtMenu*foreground: white
+XTerm*fontMenu*backgroundPixmap: gradient:vertical?dimension=300&start=gray10&end=gray40
+XTerm*fontMenu*foreground: white
+XTerm*tekMenu*backgroundPixmap: gradient:vertical?dimension=300&start=gray10&end=gray40
+XTerm*tekMenu*foreground: white
+
