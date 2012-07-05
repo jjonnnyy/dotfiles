@@ -6,8 +6,9 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , position = Top
        , lowerOnStart = True
        , commands = [ Run StdinReader
-                    , Run BatteryP ["BAT1"] ["-t", "Bat: <acstatus><left>% (<timeleft>)", "--", "-O", "Charging, ", "-o", "", "-f", "ACAD/online"] 150
-                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 25
+                    , Run BatteryP ["BAT0"] ["-t", "Bat: <acstatus><left>% (<timeleft>)", "--", "-O", "Charging, ", "-o", ""] 150
+                    , Run MultiCpu ["-L","3","-H","50","--normal","green","--high","red"] 25
+                    , Run CpuFreq ["-t", "Freq: <cpu0>"] 25
     		        , Run Date "%a %d %b %Y %H:%M:%S" "date" 10
                     , Run Com "cat" [".chargenow"] "chargenow" 300
                     , Run Com "./.printnetwork" [] "network" 30
@@ -15,5 +16,5 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %network% %cpu% %battery% %vol% <fc=#ee9a00>%date%</fc> "
+       , template = " %StdinReader% }{ %network% %multicpu% %cpufreq% %battery% %vol% <fc=#ee9a00>%date%</fc> "
        }
