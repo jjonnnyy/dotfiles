@@ -131,7 +131,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_d     ), spawn "arandr")
 
     -- Lock screen
-    , ((modm .|. shiftMask, xK_l     ), spawn "slimlock")
+    , ((0, 0x1008ff41                ), spawn "slimlock")
 
     -- Mute Volume
     , ((0, 0x1008ff12                ), spawn "amixer sset Master toggle")
