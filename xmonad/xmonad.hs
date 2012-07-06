@@ -130,17 +130,20 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Set monitors
     , ((modm              , xK_d     ), spawn "arandr")
 
-    -- Lock screen
-    , ((0, 0x1008ff41                ), spawn "slimlock")
+    -- ThinkVantage button
+    , ((0, 0x1008ff41                ), spawn "google-chrome")
+
+    -- Lock function key
+    , ((0, 0x1008ff2d                ), spawn "slimlock")
 
     -- Mute Volume
     , ((0, 0x1008ff12                ), spawn "amixer sset Master toggle")
 
     -- Raise Volume
-    , ((0, 0x1008ff13                ), spawn "amixer sset Master 5%+")
+    , ((0, 0x1008ff13                ), spawn "amixer sset Master 3%+")
 
     -- Lower Volume
-    , ((0, 0x1008ff11                ), spawn "amixer sset Master 5%-")
+    , ((0, 0x1008ff11                ), spawn "amixer sset Master 3%-")
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
