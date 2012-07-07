@@ -269,11 +269,24 @@ myStartupHook = spawn "feh --bg-fill Dropbox/Wallpapers/Jellybean/xpIUv.jpg" <+>
                 spawnOnce "dropboxd"
 
 ------------------------------------------------------------------------
+-- Xmobar Configuration
+
+myBar = "xmobar"
+myPP = defaultPP { ppCurrent = xmobarColor "yellow" "" . wrap "[" "]"
+                 , ppTitle   = xmobarColor "green"  "" . shorten 80
+                 , ppVisible = wrap "(" ")"
+                 , ppUrgent  = xmobarColor "red" "yellow"
+                 }
+
+-- Key binding to toggle the gap for the bar.
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
+------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad =<< xmobar defaults
+main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
