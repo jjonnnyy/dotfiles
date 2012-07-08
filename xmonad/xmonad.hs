@@ -263,8 +263,7 @@ myLogHook = return ()
 -- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
 -- per-workspace layout choices.
 --
--- By default, do nothing.
-myStartupHook = spawn "feh --bg-fill Dropbox/Wallpapers/Jellybean/xpIUv.jpg" <+>
+myStartupHook = spawn "feh --bg-fill .bgimg" <+>
                 spawnOnce "./.batteryscript.sh" <+>
                 spawnOnce "dropboxd"
 
