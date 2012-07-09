@@ -265,7 +265,8 @@ myLogHook = return ()
 --
 myStartupHook = spawn "feh --bg-fill .bgimg" <+>
                 spawnOnce "./.batteryscript.sh" <+>
-                spawnOnce "dropboxd"
+                spawnOnce "dropboxd" <+>
+                spawnOnce "xcompmgr"
 
 ------------------------------------------------------------------------
 -- Xmobar Configuration
