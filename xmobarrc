@@ -7,14 +7,13 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , lowerOnStart = True
        , commands = [ Run StdinReader
                     , Run BatteryP ["BAT0"] ["-t", "Bat: <acstatus><left>% (<timeleft>)", "--", "-O", "Charging, ", "-o", ""] 150
-                    , Run MultiCpu ["-L","3","-H","50","--normal","green","--high","red"] 25
-                    , Run CpuFreq ["-t", "Freq: <cpu0>"] 25
     		        , Run Date "%a %d %b %Y %H:%M:%S" "date" 10
                     , Run Com "cat" [".chargenow"] "chargenow" 300
                     , Run Com "./.printnetwork" [] "network" 30
-                    , Run Com "./.printvolume" [] "vol" 10
+                    , Run Com "./.printvolume" [] "vol" 5
+                    , Run Com "./.printload" [] "load" 30 
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %network% %multicpu% %cpufreq% %battery% %vol% <fc=#ee9a00>%date%</fc> "
+       , template = " %StdinReader% }{ %network% %load% %battery% %vol% <fc=#ee9a00>%date%</fc> "
        }

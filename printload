@@ -1,0 +1,2 @@
+echo -n "CPU Load: "
+uptime | grep -o "[.0-9]\+, [.0-9]\+, [.0-9]\+"
