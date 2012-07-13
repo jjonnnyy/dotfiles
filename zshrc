@@ -36,4 +36,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 autoload -U compinit
 compinit
+
+export EDITOR="vim"
 alias mount-server="sudo mount -t cifs -o guest //media/media /media/server"
