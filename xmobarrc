@@ -9,10 +9,10 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run BatteryP ["BAT0"] ["-t", "Bat: <acstatus><left>% (<timeleft>)", "--", "-O", "Charging, ", "-o", ""] 150
     		        , Run Date "%a %d %b %Y %H:%M:%S" "date" 10
                     , Run Com "./.printnetwork" [] "network" 30
-                    , Run Com "./.printvolume" [] "vol" 5
                     , Run Com "./.printload" [] "load" 30 
+                    , Run Volume "default" "Master" ["-O", "", "-o", "MUTED"] 5
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %network% %battery% %vol% <fc=#ee9a00>%date%</fc> "
+       , template = " %StdinReader% }{ %network% %battery% %default:Master% <fc=#ee9a00>%date%</fc> "
        }
