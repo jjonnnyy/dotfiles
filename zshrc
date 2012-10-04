@@ -39,3 +39,7 @@ compinit
 
 export EDITOR="vim"
 alias mount-server="sudo mount -t cifs -o guest //media/media /media/server"
+alias yup="yaourt -Syua"
+alias df="df -h"
+alias du="du -h"
+alias ls="ls -h"
