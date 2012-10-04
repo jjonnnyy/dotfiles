@@ -6,7 +6,7 @@ then
 
 #    if test "$device" == "wlan0";
 #    then
-        essid=`iwconfig wlan0 | grep -o '"[-a-z0-9]\+"' | grep -o '[-a-z0-9]\+'`
+        essid=`iwconfig wlan0 | grep -o '"[-a-zA-Z0-9]\+"' | grep -o '[-a-zA-Z0-9]\+'`
         rate=`iwlist wlan0 rate | grep -o '[0-9.]\+\( Mb/s\)'`
         echo "WIFI: $essid ($rate) IP: $ip"
 #    else
