@@ -38,8 +38,10 @@ autoload -U compinit
 compinit
 
 export EDITOR="vim"
-alias mount-server="sudo mount -t cifs -o guest //media/media /media/server"
+alias mount-server="mount /media/server"
 alias yup="yaourt -Syua"
 alias df="df -h"
 alias du="du -h"
-alias ls="ls -h"
+alias ls="ls --color=auto -h"
+alias setbg="feh --bg-fill ~/.bgimg"
+alias connectmouse="sudo hidd --search"
