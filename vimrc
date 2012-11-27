@@ -1,4 +1,5 @@
 set wildmenu
+set colorcolumn=101
 
 filetype plugin on
 filetype indent on
@@ -15,6 +16,13 @@ map <F2> :setlocal spell!<cr>
 map <F3> :setlocal nu!<cr>
 map <F6> :tabp<cr>
 map <F7> :tabn<cr>
+" CTRL-X is Cut
+vnoremap <C-X> "+x
+" CTRL-C is Copy
+vnoremap <C-C> "+y
+" CTRL-V is Paste
+map <C-V> "+gP
+
 
 " Tabbing "
 set expandtab
