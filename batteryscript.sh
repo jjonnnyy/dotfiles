@@ -9,7 +9,7 @@ do
 if [ "$pluggedin" != "Discharging" ]; then
 		# Check first if charging
         sleep 5m
-	elif [ "$percent" -lt "10" ]; then
+	elif [ "$percent" -lt "8" ]; then
 		# If below 15% hibernate
         notify-send -u critical "HIBERNATING DUE TO LOW BATTERY"
 		sudo pm-hibernate
