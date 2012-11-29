@@ -1,3 +1,4 @@
+call pathogen#infect()
 set wildmenu
 set colorcolumn=101
 
