@@ -39,6 +39,7 @@ compinit
 
 export EDITOR="vim"
 alias mount-server="mount /media/server"
+alias mount-usb="sudo mount -o uid=1000"
 alias yup="yaourt -Syua"
 alias df="df -h"
 alias du="du -h"
