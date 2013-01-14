@@ -1,7 +1,6 @@
 call pathogen#infect()
 set wildmenu
 set colorcolumn=101
-
 filetype plugin on
 filetype indent on
 syntax on
@@ -15,6 +14,7 @@ set spelllang=en_gb
 " Some bindings "
 map <F2> :setlocal spell!<cr>
 map <F3> :setlocal nu!<cr>
+map <F4> :TlistToggle<cr>
 map <F6> :tabp<cr>
 map <F7> :tabn<cr>
 " CTRL-X is Cut
@@ -24,6 +24,7 @@ vnoremap <C-C> "+y
 " CTRL-V is Paste
 map <C-V> "+gP
 
+imap <LeftMouse> <nop>
 
 " Tabbing "
 set expandtab
