@@ -145,6 +145,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Lower Volume
     , ((0, 0x1008ff11                ), spawn "amixer sset Master 3%-")
 
+    -- Brightness Up
+    , ((0, 0x1008ff02                ), spawn "light -a 2")
+
+    -- Brightness Down
+    , ((0, 0x1008ff03                ), spawn "light -s 2")
+
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
