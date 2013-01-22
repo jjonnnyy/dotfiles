@@ -270,6 +270,7 @@ myLogHook = return ()
 myStartupHook = spawn "feh --bg-fill .bgimg" <+>
                 spawnOnce "./.batteryscript.sh" <+>
                 spawnOnce "dropboxd" <+>
+                spawnOnce "./.dropbox.sh" <+>
                 spawnOnce "xcompmgr"
 
 ------------------------------------------------------------------------
