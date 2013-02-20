@@ -7,7 +7,7 @@
 while true; do
 	ping -c 1 www.google.com 1>/dev/null 2>/dev/null
 	if [ "$?" = 0 ]; then
-		dropbox status | egrep 'isn|Connecting'>null
+		dropbox status | egrep 'isn|Connecting'>/dev/null
 		if [ "$?" = 0 ]; then
 			dropbox stop
 			dropbox start
