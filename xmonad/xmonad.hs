@@ -128,7 +128,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_n     ), spawn "wicd-client --no-tray") 
     
     -- Set monitors
-    , ((modm              , xK_d     ), spawn "arandr")
+    , ((modm              , xK_d     ), spawn "arandr --force-version")
 
     -- ThinkVantage button
     , ((0, 0x1008ff41                ), spawn "google-chrome")
