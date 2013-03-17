@@ -40,6 +40,7 @@ compinit
 export EDITOR="vim"
 alias mount-server="mount /media/server"
 alias mount-usb="sudo mount -o uid=1000"
+alias mount-uni="sshfs je809@shell2.doc.ic.ac.uk: /media/uni"
 alias yup="yaourt -Syua"
 alias df="df -h"
 alias du="du -h"

@@ -80,7 +80,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
-    --, ((modm,               xK_n     ), refresh)
+    , ((modm,               xK_n     ), refresh)
 
     -- Move focus to the next window
     , ((modm,               xK_Tab   ), windows W.focusDown)
@@ -124,9 +124,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
-    -- Open Wicd-client
-    , ((modm              , xK_n     ), spawn "wicd-client --no-tray") 
-    
     -- Set monitors
     , ((modm              , xK_d     ), spawn "arandr --force-version")
 
@@ -135,6 +132,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Lock function key
     , ((0, 0x1008ff2d                ), spawn "slimlock")
+
+    -- Open Wicd-client
+    , ((0, 0x1008ff95                ), spawn "wicd-client --no-tray") 
 
     -- Mute Volume
     , ((0, 0x1008ff12                ), spawn "amixer sset Master toggle")
@@ -150,6 +150,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Brightness Down
     , ((0, 0x1008ff03                ), spawn "light -s 2")
+
+    -- Play / Pause
+    , ((0, 0x1008ff14                ), spawn "banshee --toggle-playing")
+
+    -- Previous Track
+    , ((0, 0x1008ff16                ), spawn "banshee --previous")
+
+    -- Next Track
+    , ((0, 0x1008ff17                ), spawn "banshee --next")
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
