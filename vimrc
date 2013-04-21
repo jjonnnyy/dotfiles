@@ -17,12 +17,13 @@ map <F3> :setlocal nu!<cr>
 map <F4> :TlistToggle<cr>
 map <F6> :tabp<cr>
 map <F7> :tabn<cr>
+
 " CTRL-X is Cut
 vnoremap <C-X> "+x
 " CTRL-C is Copy
 vnoremap <C-C> "+y
 " CTRL-V is Paste
-map <C-V> "+gP
+" map <C-V> "+gP
 
 imap <LeftMouse> <nop>
 
