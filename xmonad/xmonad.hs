@@ -276,7 +276,7 @@ myLogHook = return ()
 -- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
 -- per-workspace layout choices.
 --
-myStartupHook = spawn "feh --bg-fill .bgimg" <+>
+myStartupHook = spawn "feh --bg-fill .wallpaper" <+>
                 spawnOnce "./.batteryscript.sh" <+>
                 spawnOnce "dropboxd" <+>
                 spawnOnce "./.dropbox.sh" <+>
@@ -286,10 +286,11 @@ myStartupHook = spawn "feh --bg-fill .bgimg" <+>
 -- Xmobar Configuration
 
 myBar = "xmobar"
-myPP = defaultPP { ppCurrent = xmobarColor "yellow" "" . wrap "[" "]"
-                 , ppTitle   = xmobarColor "green"  "" . shorten 80
+myPP = defaultPP { ppCurrent = xmobarColor "#0099CC" "" . wrap "[" "]"
+                 , ppTitle   = xmobarColor "#FF9900" "" . shorten 80
                  , ppVisible = wrap "(" ")"
                  , ppUrgent  = xmobarColor "red" "yellow"
+                 , ppSep     = " | "
                  }
 
 -- Key binding to toggle the gap for the bar.

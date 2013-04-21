@@ -1,5 +1,5 @@
 #!/bin/sh
-echo -n Vol: `amixer sget Master | grep -o '[0-9]\+%'`
+echo -n "<fc=#0099CC>Vol:</fc> `amixer sget Master | grep -o '[0-9]\+%'`"
 if amixer sget Master | grep -q '\[off\]';
-then echo ' <fc=#FF0000>MUTED</fc>'; fi
+then echo ' <fc=#E00000>MUTED</fc>'; fi
 
