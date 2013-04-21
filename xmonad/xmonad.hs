@@ -128,7 +128,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_d     ), spawn "arandr --force-version")
 
     -- ThinkVantage button
-    , ((0, 0x1008ff41                ), spawn "google-chrome")
+    , ((0, 0x1008ff41                ), spawn "google-chrome --audio-buffer-size=2048")
 
     -- Lock function key
     , ((0, 0x1008ff2d                ), spawn "slimlock")
