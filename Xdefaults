@@ -30,7 +30,7 @@
 *color7:   #d3d7cf
 *color15:  #eeeeec
 
-XTerm*background: grey15
+XTerm*background: grey20
 XTerm*foreground: white
 XTerm*pointerColor: white
 

@@ -54,7 +54,7 @@ myWorkspaces    = ["1","2","3","4","5"] ++ map show [6..9]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myFocusedBorderColor = "#e00000"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -276,7 +276,8 @@ myLogHook = return ()
 -- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
 -- per-workspace layout choices.
 --
-myStartupHook = spawn "feh --bg-fill .wallpaper" <+>
+-- myStartupHook = spawn "feh --bg-fill .wallpaper" <+>
+myStartupHook = spawn     "feh --bg-center .wallpaper" <+>
                 spawnOnce "./.batteryscript.sh" <+>
                 spawnOnce "dropboxd" <+>
                 spawnOnce "./.dropbox.sh" <+>
