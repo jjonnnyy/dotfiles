@@ -1,4 +1,5 @@
 call pathogen#infect()
+
 set wildmenu
 set colorcolumn=101
 filetype plugin on
@@ -43,3 +44,11 @@ set tw=100
 set ignorecase
 set smartcase
 set hlsearch
+
+" GVim Settings "
+"set guifont=Monospace\ 9.5
+set guifont=Droid\ Sans\ Mono\ 9
+set guioptions=aegimrLt
+set showtabline=2
+set background=dark
+colorscheme molokai
