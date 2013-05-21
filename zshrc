@@ -48,3 +48,11 @@ alias rsync="rsync -h"
 alias ls="ls --color=auto -h"
 alias setbg="feh --bg-fill ~/.bgimg"
 alias connectmouse="sudo hidd --search"
+
+function find-grep-i {
+    find . -name $1 -exec grep -iHn $2 {} \;
+}
+
+function find-grep {
+    find . -name $1 -exec grep -Hn $2 {} \;
+}
