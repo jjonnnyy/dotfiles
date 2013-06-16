@@ -56,3 +56,7 @@ function find-grep-i {
 function find-grep {
     find . -name $1 -exec grep -Hn $2 {} \;
 }
+
+function gitignore {
+    echo $1 >> .gitignore
+}
