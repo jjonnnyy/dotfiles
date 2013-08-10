@@ -1,5 +1,9 @@
 #!/bin/sh
-echo -n "<fc=#0099CC>Vol:</fc> `amixer sget Master | grep -o '[0-9]\+%'`"
-if amixer sget Master | grep -q '\[off\]';
-then echo ' <fc=#E00000>MUTED</fc>'; fi
+if [ -s ~/.asoundrc ]; then
+    echo '<fc=#0099CC>Vol:</fc> <fc=#E00000>HDMI</fc>';
+else
+    echo -n "<fc=#0099CC>Vol:</fc> `amixer sget Master | grep -o '[0-9]\+%'`"
+    if amixer sget Master | grep -q '\[off\]';
+    then echo ' <fc=#E00000>MUTED</fc>'; fi
+fi
 

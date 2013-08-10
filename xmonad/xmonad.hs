@@ -127,6 +127,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Set monitors
     , ((modm              , xK_d     ), spawn "arandr --force-version")
 
+    -- Toggle HDMI audio
+    , ((modm              , xK_a     ), spawn "./.togglehdmiaudio")
+
     -- ThinkVantage button
     , ((0, 0x1008ff41                ), spawn "google-chrome --audio-buffer-size=2048")
 
