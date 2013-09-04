@@ -1,7 +1,7 @@
 call pathogen#infect()
 
 set wildmenu
-set colorcolumn=101
+"set colorcolumn=101
 filetype plugin on
 filetype indent on
 syntax on
@@ -47,7 +47,8 @@ set hlsearch
 
 " GVim Settings "
 "set guifont=Monospace\ 9.5
-set guifont=Droid\ Sans\ Mono\ 9
+"set guifont=Monospace 11
+set guifont=DejaVu\ LGC\ Sans\ Mono\ 11
 set guioptions=aegimrLt
 set showtabline=2
 set background=dark
