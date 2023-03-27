@@ -1,6 +1,0 @@
-#! /bin/sh
-if [ -s ~/.asoundrc ]; then
-    mv ~/.asoundrc ~/.asoundrcHDMI
-else
-    mv ~/.asoundrcHDMI ~/.asoundrc
-fi
