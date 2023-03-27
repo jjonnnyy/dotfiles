@@ -1,0 +1,4 @@
+theme = "nightfox"
+
+[editor]
+auto-save = true
